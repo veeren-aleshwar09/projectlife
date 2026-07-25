@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LifeOS</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>LifeOS</h2>
+            </div>
+
+            <ul class="menu">
+                <li class="active">Dashboard</li>
+                <li>Tasks</li>
+                <li>Goals</li>
+                <li>Workout</li>
+                <li>Diet</li>
+                <li>Water</li>
+                <li>Notes</li>
+                <li>Pomodoro</li>
+                <li>Analytics</li>
+                <li>Settings</li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Navbar -->
+            <header class="navbar">
+                <input type="text" placeholder="Search...">
+                <div class="profile">
+                    <span>👋 Aleshwar</span>
+                </div>
+            </header>
+
+            <!-- Dashboard -->
+            <section class="dashboard">
+                <h1>Welcome Back 👋</h1>
+                <p>Ready to build a better version of yourself today?</p>
+
+                <div class="cards">
+                    <div class="card">
+                        <h3>Total Tasks</h3>
+                        <h2 id="totalTasks">0</h2>
+                    </div>
+
+                    <div class="card">
+                        <h3>Completed</h3>
+                        <h2 id="completedTasks">0</h2>
+                    </div>
+
+                    <div class="card">
+                        <h3>Pending</h3>
+                        <h2 id="pendingTasks">0</h2>
+                    </div>
+
+                    <div class="card">
+                        <h3>Progress</h3>
+                        <h2 id="progressPercent">0%</h2>
+                    </div>
+                </div>
+
+                <div class="progress-section">
+
+                    <div class="progress-header">
+                        <h2>Today's Progress</h2>
+                        <span id="progressText">0%</span>
+                    </div>
+
+                    <div class="progress-bar">
+
+                        <div id="progressFill" class="progress-fill"></div>
+
+                    </div>
+
+                </div>
+
+                <!-- Task Section -->
+                <div class="task-section">
+                    <div class="task-header">
+                        <h2>Today's Tasks</h2>
+                        <button id="addTaskBtn">
+                            + Add Task
+                        </button>
+                    </div>
+
+                    <div class="task-input">
+                        <input
+                            id="taskInput"
+                            type="text"
+                            placeholder="Enter a new task..."
+                        >
+                    </div>
+
+                    <div id="taskList" class="task-list">
+                    </div>
+                </div>
+
+                <!-- ===========================
+                     Goals Section
+                =========================== -->
+
+                <section class="goal-section">
+
+                    <div class="goal-header">
+
+                        <h2>Goals</h2>
+
+                        <button id="addGoalBtn">
+                            + Add Goal
+                        </button>
+
+                    </div>
+
+                    <div class="goal-inputs">
+
+                        <input
+                            type="text"
+                            id="goalInput"
+                            placeholder="Enter your goal..."
+                        >
+
+                        <input
+                            type="date"
+                            id="goalDate"
+                        >
+
+                        <select id="goalPriority">
+
+                            <option value="High">High Priority</option>
+                            <option value="Medium">Medium Priority</option>
+                            <option value="Low">Low Priority</option>
+
+                        </select>
+
+                    </div>
+
+                    <div id="goalList" class="goal-list">
+
+                    </div>
+
+                </section>
+
+                <!-- ===========================
+                     Workout Section
+                =========================== -->
+
+                <section class="workout-section">
+
+                    <div class="workout-header">
+
+                        <h2>Workout Tracker</h2>
+
+                        <button id="addWorkoutBtn">
+                            + Add Workout
+                        </button>
+
+                    </div>
+
+                    <div class="workout-inputs">
+
+                        <input
+                            id="exerciseInput"
+                            type="text"
+                            placeholder="Exercise Name"
+                        >
+
+                        <input
+                            id="durationInput"
+                            type="number"
+                            placeholder="Minutes"
+                        >
+
+                        <input
+                            id="calorieInput"
+                            type="number"
+                            placeholder="Calories"
+                        >
+
+                    </div>
+
+                    <div id="workoutList"></div>
+
+                </section>
+
+                <!-- ===========================
+                     Diet Section
+                =========================== -->
+
+                <section class="diet-section">
+
+                    <div class="diet-header">
+
+                        <h2>Diet Tracker</h2>
+
+                        <button id="addMealBtn">
+                            + Add Meal
+                        </button>
+
+                    </div>
+
+                    <div class="diet-inputs">
+
+                        <input
+                            type="text"
+                            id="mealInput"
+                            placeholder="Meal Name"
+                        >
+
+                        <select id="mealType">
+
+                            <option>Breakfast</option>
+                            <option>Lunch</option>
+                            <option>Dinner</option>
+                            <option>Snack</option>
+
+                        </select>
+
+                        <input
+                            type="number"
+                            id="mealCalories"
+                            placeholder="Calories"
+                        >
+
+                    </div>
+
+                    <div id="mealList"></div>
+
+                </section>
+
+            </section>
+        </main>
+    </div>
+
+    <script src="js/tasks.js"></script>
+    <script src="js/goals.js"></script>
+    <script src="js/workout.js"></script>
+    <script src="js/diet.js"></script>
+</body>
+</html>
